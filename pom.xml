@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ghjansen</groupId>
+    <artifactId>rsm</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>rsm</name>
+    <description>Recursive State Machine</description>
+    <url>https://github.com/ghjansen/rsm</url>
+    <inceptionYear>2021</inceptionYear>
+    <licenses>
+        <license>
+            <name>GNU Affero General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/agpl-3.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>ghjansen</id>
+            <name>Guilherme Humberto Jansen</name>
+            <email>contact.ghjansen@gmail.com</email>
+            <url>https://github.com/ghjansen</url>
+        </developer>
+    </developers>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+</project>
