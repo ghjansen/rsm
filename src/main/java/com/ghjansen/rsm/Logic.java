@@ -18,21 +18,9 @@
 
 package com.ghjansen.rsm;
 
-public class State {
+@FunctionalInterface
+public interface Logic {
 
-    private final String name;
-    private final Logic logic;
+    String execute();
 
-    public State(String name, Logic function) {
-        this.name = name;
-        this.logic = function;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Logic getLogic() {
-        return logic;
-    }
 }
