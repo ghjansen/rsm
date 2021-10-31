@@ -13,13 +13,13 @@ The Recursive State Machine (RSM) is an experimental Finite State Machine that a
 The following diagram shows and example of a regular Finite State Machine, which contains 4 States (s1, s2, s3 and s4), some transitions between these States, along with the initial and final States. 
 
 <p align="center">
-  <img src="src/resources/diagram1.png" />
+  <img src="src/main/resources/diagram1.png" />
 </p>
 
 Assuming that the logic behind the State s3 is too big, or reached enough complexity to justify being refactored into multiple parts, the State s3 can be redesigned to contain a Finite State Machine within itself, translating its logic into multiple States (s3-1, s3-2 and s3-2), as shown by the diagram bellow:
 
 <p align="center">
-  <img src="src/resources/diagram2.png" />
+  <img src="src/main/resources/diagram2.png" />
 </p>
 
 The State s3 continues to exist as before, changing only internally, which does not affect the Finite State Machine from which s3 is part of, and the overall result from the execution of both designs is the same.
