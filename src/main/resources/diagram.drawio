@@ -1,0 +1,19 @@
+<!--
+  ~ RSM - Recursive State Machine
+  ~ Copyright (C) 2021  Guilherme Humberto Jansen
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published
+  ~ by the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<mxfile host="Electron" modified="2021-10-31T13:00:52.225Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/14.1.8 Chrome/87.0.4280.88 Electron/11.1.1 Safari/537.36" etag="MkBJf4Sv6Uy0YgNykm7K" version="14.1.8" type="device"><diagram id="a80-lkOmHigUv-mu_OBU" name="Page-1">7Vtbb+MqEP41eWxlwI6Tx+1l9+hoj7RSH/byRmNie48TLEyapL9+Ica34Kbk0oCl7UvNGAjMfN8MTCYjdL/YfGE4T/6jEclG0Is2I/QwghAAbyz+Scm2lEzGoBTELI1Up0bwlL4SJfSUdJVGpOh05JRmPM27whldLsmMd2SYMbrudpvTrPupOY6JJnia4UyXfk8jnqhdBF4j/4ekccLrDas3C1x1VoIiwRFdt0TocYTuGaW8fFps7kkmlVfppRz3+Y239cIYWXKTAb/Czd36NfyaxfHzF1wESfrv7xtlnRecrdSG1WL5ttKAmEUoWzTuEr7IhAyIR7GZXL4vOGb8iWMu38/TLLunGWW7gcjb/cnOnNH/SevNfK7eqE8njJPNm9sCtbIEyghdEM62oosaUFlC4csPyua6MRZSPZKWnSoZVvCI63kbDYoHpcQjFBoaKDQSCFNNynhCY7rE2WMjbSta6iYVcPyUpfFSyJ4p53QhXpBl9EniW06Sk2UpUfyZHFS6UCzb/hDCuvFTNm6Dqvmwab982FatTcp/qGXJ59Yo0WoGyUY1pty83HHHvAVdsRl5H5caDAT7MYsJPzB00g8XRjLM05fuOvrMr4Z+o6n45BpmAIxvp6gDtWB6Ow695g+Mu5OWK1XztIm5N/V0sj9tGHRnKtWlzSTsj7etbrnsUGgQrpVwOqpBcAKKGV0tIxIpJDR9vlKaKxj9JpxvFWjxitMu9ivANSD72cZYL+BOBfdsxV52awVvo7YHje8CeWKIWgDPhO1ZXquC7lH27ajsg4wNPsTYNuz7RhS7jn0nWlQqgG7xOtCvk5STpxzvdr4WB7uuqXCRl0etebqRJr9EGAdwL457Whz3e+K4/1FxHEydYcQx8bZhREOCmkfXYQQwDdQAWXV5QOcEcosT0OtyYmKbE6EznDgmSlwS23AQ7v6kS4e7zsu7ovMyNrBd5wV153Xo5m7TednyVtAfOAmsnWkBMiQBtEsCpJOgx+ZWSTBx61QLdZUdUFhPvk/mmGxm+9DYrXQfDM5UqHMJVARtq9QkJ/03hXqKY69M+75jn57p2I2TqAjJLGp3ohMTp3Iq5zKn8JQ709/MaY1BA7Ai3+YpJDglNW7/UuzAMdPcwOd+pXNePJrqx0zHk6cIWj5nop5M2qDuXtYSEMg3JcXYqtcbZipwUAa26vWqZQ4hw6S8nvX8OHLnKDCwjBMam5IitEoK/WrqesbJ/lHApCJqSCkn6wmSwJ1ijYF9NY1MqzXsHq6QXq7hlpPRizV0J1NH5zYnauHlSeHpKnLiQGqadLFHCtNruO/1g+JKN46eO7cTBnb/xmFsYKtFC8HQcwb2Ts/GBraaKUU9iTR041gqbf9S6du+VAZDL2Ow5vcqkzhOi2qZXVo4duLTaGH7Whn0KGjAtLjiec83rc+1TIu++twbxyt0A9sFPj7UtHZAY07WowB/PwJbzrf4JkVTAy1IMfUrFy8F0ZiznxkwLQIB4TsTWS8B8fWvUo7jpO0MKAwdY2TQ83smPTKIDfO9EKAINxMbJ6yHiYs0isoKHFKkr/h5N5XUokKHmDe4GwUPci5xHihKaoJLBZOgq+aerFqfmuHxahbN5ofnJc6bn++jxz8=</diagram></mxfile>
