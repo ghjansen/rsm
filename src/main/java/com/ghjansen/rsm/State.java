@@ -23,9 +23,9 @@ public class State {
     private final String name;
     private final Logic logic;
 
-    public State(String name, Logic function) {
+    public State(String name, Logic logic) {
         this.name = name;
-        this.logic = function;
+        this.logic = logic;
     }
 
     public String getName() {
