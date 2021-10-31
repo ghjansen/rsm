@@ -18,22 +18,44 @@
 
 package com.ghjansen.rsm;
 
+import org.apache.log4j.Logger;
+
 import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.HashMap;
 import java.util.Optional;
 
-public class Machine {
+public class Machine implements Logic {
 
-    private State currentState;
+    private final Logger logger = Logger.getLogger(Machine.class);
+    private static final String DEBUG_MSG_STATE_NOT_FOUND = "State %s not found in the recursive machine %s. Backtracking execution.";
+    private static final String DEBUG_MSG_INITIAL_STATE = "Started recursive state machine %s.";
+    private static final String DEBUG_MSG_FINAL_STATE = "Finished recursive state machine %s.";
+    private static final String ERROR_MSG_TRANSITION_NOT_FOUND = "Transition %s to %s not found in the recursive state machine %s.";
+
+    private static final String INITIAL_STATE_NAME = "initialState";
+    public static final String FINAL_STATE_NAME = "finalState";
+
+    private final String name;
     private final State initialState;
+    private final State entranceState;
+    private State currentState;
+    private final State finalState;
     private final HashMap<String,State> states;
     private final HashMap<SimpleImmutableEntry<State, State>, State> transitions;
 
-    public Machine(State initialState, HashMap<String, State> states, HashMap<SimpleImmutableEntry<State, State>, State> transitions) {
-        this.initialState = initialState;
+    public Machine(String name, State entranceState, HashMap<String, State> states, HashMap<SimpleImmutableEntry<State, State>, State> transitions) {
+        this.name = name;
+        this.initialState = new State(INITIAL_STATE_NAME, () -> {logger.debug(DEBUG_MSG_INITIAL_STATE.formatted(this.name));return null;});
+        this.entranceState = entranceState;
+        this.currentState = this.initialState;
+        this.finalState = new State(FINAL_STATE_NAME, () -> {logger.debug(DEBUG_MSG_FINAL_STATE.formatted(this.name));return null;});
         this.states = states;
         this.transitions = transitions;
-        this.transitions.put(new SimpleImmutableEntry<>(null, initialState), initialState);
+        this.transitions.put(new SimpleImmutableEntry<>(this.initialState, this.entranceState), this.initialState);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public State getCurrentState() {
@@ -52,25 +74,35 @@ public class Machine {
         return transitions;
     }
 
-    public void run(){
-        transitionCycle();
+    @Override
+    public String execute() {
+        return transitionCycle();
     }
 
-    private void transitionCycle(){
-        String nextStateName = initialState.getName();
-        while (nextStateName != null) {
-            this.currentState = transition(nextStateName);
-            nextStateName = this.currentState.getLogic().execute();
+    private String transitionCycle(){
+        initialState.getLogic().execute();
+        Optional<String> nextStateName = Optional.ofNullable(entranceState.getName());
+        while (nextStateName.isPresent()) {
+            Optional<State> nextState = Optional.ofNullable(states.get(nextStateName.get()));
+            if(nextState.isPresent()){
+                validateTransition(nextState.get());
+                this.currentState = nextState.get();
+                nextStateName = Optional.ofNullable(this.currentState.getLogic().execute());
+            } else {
+                logger.debug(DEBUG_MSG_STATE_NOT_FOUND.formatted(nextStateName, this.name));
+                break;
+            }
         }
+        return nextStateName.get();
     }
 
-    private State transition(String nextStateName){
-        Optional<State> nextState = Optional.ofNullable(states.get(nextStateName));
-        SimpleImmutableEntry<State,State> candidate = new SimpleImmutableEntry<>(this.currentState, nextState.orElseThrow());
-        if (!transitions.containsKey(candidate)){
-            throw new RuntimeException("No transition found from " + this.currentState.getName() + " to " + nextState.get().getName());
+    private void validateTransition(State nextState){
+        SimpleImmutableEntry<State,State> transition = new SimpleImmutableEntry<>(this.currentState, nextState);
+        if (!transitions.containsKey(transition)) {
+            final String errorMsg = ERROR_MSG_TRANSITION_NOT_FOUND.formatted(this.currentState.getName(), nextState.getName(), this.name);
+            logger.error(errorMsg);
+            throw new RuntimeException(errorMsg);
         }
-        return nextState.get();
     }
 
 }
